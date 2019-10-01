@@ -1,0 +1,30 @@
+<ActionBar class="action-bar">
+    <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+    <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
+        ios.position="left">
+    </ActionItem>
+    <Label class="action-bar-title" text="Animations"></Label>
+</ActionBar>
+
+<GridLayout class="page page-content">
+    <ScrollView>
+        <StackLayout class="p-20">
+            <FlexboxLayout flexWrap="wrap" justifyContent="space-between">
+                <LottieView width="100" height="150" src="Mobilo/A.json" loop="true" autoPlay="true"></LottieView>
+                <LottieView width="100" height="150" src="Mobilo/B.json" loop="true" autoPlay="true"></LottieView>
+                <LottieView width="100" height="150" src="Mobilo/D.json" loop="true" autoPlay="true"></LottieView>
+                <LottieView width="100" height="150" src="Mobilo/N.json" loop="true" autoPlay="true"></LottieView>
+                <LottieView width="100" height="150" src="Mobilo/R.json" loop="true" autoPlay="true"></LottieView>
+                <LottieView width="100" height="150" src="Mobilo/S.json" loop="true" autoPlay="true"></LottieView>
+                <LottieView width="100" height="150" src="Mobilo/AndroidWave.json" loop="true" autoPlay="true"></LottieView>
+                <LottieView width="100" height="150" src="Mobilo/doughnut.json" loop="true" autoPlay="true"></LottieView>
+                <LottieView width="100" height="150" src="Mobilo/EmptyState.json" loop="true" autoPlay="true"></LottieView>
+                <LottieView width="100" height="150" src="Mobilo/HamburgerArrow.json" loop="true" autoPlay="true"></LottieView>
+                <LottieView width="100" height="150" src="Mobilo/LightBulb.json" loop="true" autoPlay="true"></LottieView>
+                <LottieView width="100" height="150" src="Mobilo/pinjump.json" loop="true" autoPlay="true"></LottieView>
+                <LottieView width="100" height="150" src="Mobilo/TwitterHeart.json" loop="true" autoPlay="true"></LottieView>
+                <LottieView width="100" height="150" src="Mobilo/WalkThrough.json" loop="true" autoPlay="true"></LottieView>
+            </FlexboxLayout>
+        </StackLayout>
+    </ScrollView>
+</GridLayout>

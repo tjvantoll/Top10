@@ -1,0 +1,80 @@
+// Place any CSS rules you want to apply on both iOS and Android here.
+// This is where the vast majority of your CSS code goes.
+// Font icon class
+.fa {
+    font-family: "FontAwesome";
+}
+// Common page class
+.page-content {
+    .page-placeholder {
+        color: $page-icon-color;
+        font-size: $page-content-placeholder-font-size;
+        vertical-align: center;
+        horizontal-align: center;
+    }
+
+    .page-icon {
+        font-size: 72;
+        vertical-align: top;
+        horizontal-align: center;
+        color: $page-icon-color;
+        margin-top: 20%;
+    }
+}
+
+//Action bar
+ActionBar .action-bar-title {
+    horizontal-align: center;
+}
+
+// Drawer navigation custom styles
+$sidedrawer-list-item-offset-left: 15;
+$sidedrawer-list-icon-offset: 10;
+$sidedrawer-list-icon-size: 20;
+
+.sidedrawer {
+    &.sidedrawer-left {
+        background-color: $ab-background;
+
+        .sidedrawer-header-image {
+            height: 80;
+        }
+    }
+
+    .sidedrawer-header {
+        background-color: $side-drawer-background;
+
+        .sidedrawer-header-brand {
+            color: $ab-color;
+        }
+    }
+
+    .sidedrawer-content {
+        background-color: $side-drawer-background;
+        padding-top: 20;
+
+        $sidedrawer-list-item-offset-left: 15;
+        $sidedrawer-list-icon-offset: 10;
+        $sidedrawer-list-icon-size: 20;
+
+        .sidedrawer-list-item {
+            margin: 7 7 7 0;
+            padding-left: 15;
+
+            Label {
+                vertical-align: center;
+                color: $blue-dark;
+            }
+            .fa {
+                width: $sidedrawer-list-icon-size;
+                margin-right: $sidedrawer-list-icon-offset;
+            }
+            &.selected {
+                background-color: $item-active-background;
+                Label {
+                    color: $item-active-color;
+                }
+            }
+        }
+    }
+}

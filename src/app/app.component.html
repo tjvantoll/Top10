@@ -1,0 +1,50 @@
+<RadSideDrawer [drawerTransition]="sideDrawerTransition">
+    <GridLayout tkDrawerContent rows="auto, *" class="sidedrawer sidedrawer-left">
+        <StackLayout row="0" class="sidedrawer-header">
+            <Image src="~/app/images/nativescript-logo.png" height="200"></Image>
+        </StackLayout>
+    
+        <ScrollView row="1" class="sidedrawer-content">
+            <StackLayout>
+                <StackLayout height="10"></StackLayout>
+
+                <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/animations')" (tap)="onNavItemTap('/animations')">
+                    <Label col="0" text="&#xf015;" class="fa"></Label>
+                    <Label col="1" text="Animations" class="p-r-10"></Label>
+                </GridLayout>
+
+                <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/biometric')" (tap)="onNavItemTap('/biometric')">
+                    <Label col="0" text="&#xf1ea;" class="fa"></Label>
+                    <Label col="1" text="Biometric auth" class="p-r-10"></Label>
+                </GridLayout>
+
+                <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/appsync')" (tap)="onNavItemTap('/appsync')">
+                    <Label col="0" text="&#xf1ea;" class="fa"></Label>
+                    <Label col="1" text="AppSync" class="p-r-10"></Label>
+                </GridLayout>
+
+                <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/bluetooth')" (tap)="onNavItemTap('/bluetooth')">
+                    <Label col="0" text="&#xf1ea;" class="fa"></Label>
+                    <Label col="1" text="Bluetooth" class="p-r-10"></Label>
+                </GridLayout>
+
+                <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/text')" (tap)="onNavItemTap('/text')">
+                    <Label col="0" text="&#xf1ea;" class="fa"></Label>
+                    <Label col="1" text="Text recognition" class="p-r-10"></Label>
+                </GridLayout>
+
+                <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/ar')" (tap)="onNavItemTap('/ar')">
+                    <Label col="0" text="&#xf1ea;" class="fa"></Label>
+                    <Label col="1" text="AR" class="p-r-10"></Label>
+                </GridLayout>
+
+                <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/facetracking')" (tap)="onNavItemTap('/facetracking')">
+                    <Label col="0" text="&#xf1ea;" class="fa"></Label>
+                    <Label col="1" text="Face tracking" class="p-r-10"></Label>
+                </GridLayout>
+            </StackLayout>
+        </ScrollView>
+    </GridLayout>
+
+    <page-router-outlet tkMainContent class="page page-content"></page-router-outlet>
+</RadSideDrawer>

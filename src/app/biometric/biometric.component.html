@@ -1,0 +1,15 @@
+<ActionBar class="action-bar">
+    <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+    <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
+        ios.position="left">
+    </ActionItem>
+    <Label class="action-bar-title" text="Biometric Auth"></Label>
+</ActionBar>
+
+<GridLayout class="page page-content">
+    <ScrollView>
+        <StackLayout class="p-20">
+            <Label text="Biometric auth"></Label>
+        </StackLayout>
+    </ScrollView>
+</GridLayout>

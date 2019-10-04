@@ -3,10 +3,12 @@ import { Routes } from "@angular/router";
 import { NativeScriptRouterModule } from "nativescript-angular/router";
 
 const routes: Routes = [
-    { path: "", redirectTo: "/appsync", pathMatch: "full" },
+    { path: "", redirectTo: "/ar", pathMatch: "full" },
     { path: "animations", loadChildren: () => import("./animations/animations.module").then(mod => mod.AnimationsModule) },
+    { path: "ar", loadChildren: () => import("./ar/ar.module").then(mod => mod.ARModule) },
     { path: "appsync", loadChildren: () => import("./appsync/appsync.module").then(mod => mod.AppSyncModule) },
-    { path: "biometric", loadChildren: () => import("./biometric/biometric.module").then(mod => mod.BiometricModule) }
+    { path: "biometric", loadChildren: () => import("./biometric/biometric.module").then(mod => mod.BiometricModule) },
+    { path: "bluetooth", loadChildren: () => import("./bluetooth/bluetooth.module").then(mod => mod.BluetoothModule) }
 ];
 
 @NgModule({

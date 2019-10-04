@@ -42,6 +42,11 @@
                     <Label col="0" text="&#xf007;" class="fa"></Label>
                     <Label col="1" text="Face tracking" class="p-r-10"></Label>
                 </GridLayout>
+
+                <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/maps')" (tap)="onNavItemTap('/maps')">
+                    <Label col="0" text="&#xf279;" class="fa"></Label>
+                    <Label col="1" text="Maps & geolocation" class="p-r-10"></Label>
+                </GridLayout>
             </StackLayout>
         </ScrollView>
     </GridLayout>

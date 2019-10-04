@@ -8,7 +8,7 @@ import { Color } from "tns-core-modules/color";
 registerElement("AR", () => require("nativescript-ar").AR);
 
 @Component({
-    selector: "AR",
+    selector: "ar-example",
     moduleId: module.id,
     styleUrls: ["./ar.component.css"],
     templateUrl: "./ar.component.html"
@@ -18,20 +18,35 @@ export class ARComponent implements OnInit {
     // public planeMaterial = "Assets.scnassets/Materials/tron/tron-diffuse.png";
     // public planeMaterial = new Color("red");
     public planeMaterial = <ARMaterial>{
-        diffuse: new Color("white"),
+        diffuse: new Color("red"),
         transparency: 0.2
     };
 
     constructor() {
         console.log("AR supported? " + AR.isSupported());
+        console.log("haz updates");
     }
 
-    ngOnInit() {}
+    ngOnInit() { }
 
-    planeTapped(args: ARPlaneTappedEventData): void {
+    onPlaneTapped(args: ARPlaneTappedEventData): void {
         console.log(`Plane tapped at ${args.position.x} y ${args.position.y} z ${args.position.z}`);
         const ar: AR = args.object;
         // interact with the 'ar' object here if you like
+        ar.addBox({
+            position: {
+                x: args.position.x,
+                y: args.position.y,
+                z: args.position.z
+            },
+            dimensions: {
+                x: 0.1,
+                y: 0.1,
+                z: 0.1
+            },
+            mass: 20,
+            materials: [new Color("blue")]
+        });
     }
 
     onDrawerButtonTap(): void {
@@ -39,3 +54,4 @@ export class ARComponent implements OnInit {
         sideDrawer.showDrawer();
     }
 }
+

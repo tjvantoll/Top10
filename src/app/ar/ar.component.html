@@ -8,9 +8,10 @@
 
 <GridLayout class="page">
     <Label text="AR"></Label>
-    <!--<AR
+    <AR
         debugLevel="FEATURE_POINTS"
         detectPlanes="true"
-        [planeMaterial]="planeMaterial">
-    </AR>-->
+        [planeMaterial]="planeMaterial"
+        (planeTapped)="onPlaneTapped($event)">
+    </AR>
 </GridLayout>

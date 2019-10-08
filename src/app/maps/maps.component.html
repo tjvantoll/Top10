@@ -6,15 +6,20 @@
     <Label class="action-bar-title" text="Maps"></Label>
 </ActionBar>
 
-<GridLayout class="page">
-    <ContentView height="100%" width="100%">
+<GridLayout rows="auto, *" class="page">
+    <StackLayout row="0" orientation="horizontal">
+        <Button text="Markers" class="btn btn-primary" (tap)="addMarkers()"></Button>>
+        <Button text="Animate" class="btn btn-primary" (tap)="animateCamera()"></Button>
+        <Button text="Draw" class="btn btn-primary" (tap)="draw()"></Button>
+    </StackLayout>
+    <ContentView row="1" height="100%" width="100%">
         <Mapbox
             accessToken="pk.eyJ1IjoidGp2YW50b2xsIiwiYSI6ImNpaHdjN2RwcDAyam50NWtoaXpscGJidnMifQ.R1s89uuLt3BKNHytLasOiw"
             mapStyle="traffic_day"
-            latitude="50.467735"
-            longitude="13.427718"
+            latitude="37.785834"
+            longitude="-122.40417"
             hideCompass="true"
-            zoomLevel="12"
+            zoomLevel="11"
             showUserLocation="true"
             (mapReady)="onMapReady($event)">
         </Mapbox>

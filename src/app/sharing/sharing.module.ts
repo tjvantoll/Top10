@@ -3,6 +3,7 @@ import { NativeScriptCommonModule } from "nativescript-angular/common";
 
 import { SharingRoutingModule } from "./sharing-routing.module";
 import { SharingComponent } from "./sharing.component";
+import { LibraryService } from "./libraries.service";
 
 @NgModule({
     imports: [
@@ -11,6 +12,9 @@ import { SharingComponent } from "./sharing.component";
     ],
     declarations: [
         SharingComponent
+    ],
+    providers: [
+        LibraryService
     ],
     schemas: [
         NO_ERRORS_SCHEMA

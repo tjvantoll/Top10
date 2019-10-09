@@ -7,5 +7,18 @@
 </ActionBar>
 
 <GridLayout class="page">
-    <Label text="Code Sharing"></Label>
+    <StackLayout class="p-20">
+        <Label class="h1" text="Chance"></Label>
+        <Label class="result" [text]="chanceResult" textWrap="true"></Label>
+
+        <StackLayout class="hr hr-light"></StackLayout>
+
+        <Label class="h1" text="Lodash"></Label>
+        <Label class="result" [text]="lodashResult"></Label>
+
+        <StackLayout class="hr hr-light"></StackLayout>
+
+        <Label class="h1" text="Moment"></Label>
+        <Label class="result" [text]="momentResult"></Label>
+    </StackLayout>
 </GridLayout>

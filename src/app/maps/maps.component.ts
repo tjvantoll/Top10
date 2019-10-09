@@ -28,7 +28,6 @@ export class MapsComponent implements OnInit {
 
     onMapReady(args) {
         this.mapbox = args.map;
-        this.draw();
     }
 
     addMarkers() {
@@ -82,7 +81,7 @@ export class MapsComponent implements OnInit {
     draw() {
         this.mapbox.addPolygon({
             fillColor: new Color("lightblue"),
-            fillOpacity: 0.7,
+            fillOpacity: 0.8,
 
             // stroke-related properties are only effective on iOS
             strokeColor: new Color("gray"),

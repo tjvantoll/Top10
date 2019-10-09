@@ -13,14 +13,19 @@
                     <Label col="1" text="Animations" class="p-r-10"></Label>
                 </GridLayout>
 
-                <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/biometric')" (tap)="onNavItemTap('/biometric')">
-                    <Label col="0" text="&#xf084;" class="fa"></Label>
-                    <Label col="1" text="Biometric auth" class="p-r-10"></Label>
-                </GridLayout>
-
                 <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/appsync')" (tap)="onNavItemTap('/appsync')">
                     <Label col="0" text="&#xf021;" class="fa"></Label>
                     <Label col="1" text="AppSync" class="p-r-10"></Label>
+                </GridLayout>
+
+                <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/ar')" (tap)="onNavItemTap('/ar')">
+                    <Label col="0" text="&#xf0ac;" class="fa"></Label>
+                    <Label col="1" text="AR" class="p-r-10"></Label>
+                </GridLayout>
+
+                <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/biometric')" (tap)="onNavItemTap('/biometric')">
+                    <Label col="0" text="&#xf084;" class="fa"></Label>
+                    <Label col="1" text="Biometric auth" class="p-r-10"></Label>
                 </GridLayout>
 
                 <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/bluetooth')" (tap)="onNavItemTap('/bluetooth')">
@@ -28,14 +33,9 @@
                     <Label col="1" text="Bluetooth" class="p-r-10"></Label>
                 </GridLayout>
 
-                <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/text')" (tap)="onNavItemTap('/text')">
-                    <Label col="0" text="&#xf02d;" class="fa"></Label>
-                    <Label col="1" text="Text recognition" class="p-r-10"></Label>
-                </GridLayout>
-
-                <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/ar')" (tap)="onNavItemTap('/ar')">
-                    <Label col="0" text="&#xf0ac;" class="fa"></Label>
-                    <Label col="1" text="AR" class="p-r-10"></Label>
+                <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/maps')" (tap)="onNavItemTap('/maps')">
+                    <Label col="0" text="&#xf1e0;" class="fa"></Label>
+                    <Label col="1" text="Code Sharing" class="p-r-10"></Label>
                 </GridLayout>
 
                 <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/facetracking')" (tap)="onNavItemTap('/facetracking')">
@@ -46,6 +46,11 @@
                 <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/maps')" (tap)="onNavItemTap('/maps')">
                     <Label col="0" text="&#xf279;" class="fa"></Label>
                     <Label col="1" text="Maps & geolocation" class="p-r-10"></Label>
+                </GridLayout>
+
+                <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/text')" (tap)="onNavItemTap('/text')">
+                    <Label col="0" text="&#xf02d;" class="fa"></Label>
+                    <Label col="1" text="Text recognition" class="p-r-10"></Label>
                 </GridLayout>
             </StackLayout>
         </ScrollView>

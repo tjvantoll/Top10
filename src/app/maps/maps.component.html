@@ -6,13 +6,8 @@
     <Label class="action-bar-title" text="Maps"></Label>
 </ActionBar>
 
-<GridLayout rows="auto, *" class="page">
-    <StackLayout row="0" orientation="horizontal">
-        <Button text="Markers" class="btn btn-primary" (tap)="addMarkers()"></Button>>
-        <Button text="Animate" class="btn btn-primary" (tap)="animateCamera()"></Button>
-        <Button text="Draw" class="btn btn-primary" (tap)="draw()"></Button>
-    </StackLayout>
-    <ContentView row="1" height="100%" width="100%">
+<GridLayout rows="*, auto" class="page">
+    <ContentView rowspan="2" height="100%" width="100%">
         <Mapbox
             accessToken="pk.eyJ1IjoidGp2YW50b2xsIiwiYSI6ImNpaHdjN2RwcDAyam50NWtoaXpscGJidnMifQ.R1s89uuLt3BKNHytLasOiw"
             mapStyle="traffic_day"
@@ -24,4 +19,9 @@
             (mapReady)="onMapReady($event)">
         </Mapbox>
     </ContentView>
+    <FlexboxLayout class="button-row" row="1" orientation="horizontal">
+        <Button text="Markers" class="btn btn-primary btn-rounded-lg" (tap)="addMarkers()"></Button>>
+        <Button text="Animate" class="btn btn-primary btn-rounded-lg" (tap)="animateCamera()"></Button>
+        <Button text="Draw" class="btn btn-primary btn-rounded-lg" (tap)="draw()"></Button>
+    </FlexboxLayout>
 </GridLayout>

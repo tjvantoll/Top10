@@ -40,17 +40,17 @@
 
                 <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/facetracking')" (tap)="onNavItemTap('/facetracking')">
                     <Label col="0" text="&#xf007;" class="fa"></Label>
-                    <Label col="1" text="Face tracking" class="p-r-10"></Label>
+                    <Label col="1" text="Face Tracking" class="p-r-10"></Label>
+                </GridLayout>
+
+                <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/ml')" (tap)="onNavItemTap('/ml')">
+                    <Label col="0" text="&#xf013;" class="fa"></Label>
+                    <Label col="1" text="Machine Learning" class="p-r-10"></Label>
                 </GridLayout>
 
                 <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/maps')" (tap)="onNavItemTap('/maps')">
                     <Label col="0" text="&#xf279;" class="fa"></Label>
-                    <Label col="1" text="Maps & geolocation" class="p-r-10"></Label>
-                </GridLayout>
-
-                <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/text')" (tap)="onNavItemTap('/text')">
-                    <Label col="0" text="&#xf02d;" class="fa"></Label>
-                    <Label col="1" text="Text recognition" class="p-r-10"></Label>
+                    <Label col="1" text="Maps & Geolocation" class="p-r-10"></Label>
                 </GridLayout>
             </StackLayout>
         </ScrollView>

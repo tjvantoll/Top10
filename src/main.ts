@@ -1,6 +1,7 @@
 // this import should be first in order to load some required settings (like globals and reflect-metadata)
 import { platformNativeScriptDynamic } from "nativescript-angular/platform";
 import { AppSync, SyncStatus } from "nativescript-app-sync";
+const firebase = require("nativescript-plugin-firebase");
 import * as application from "tns-core-modules/application";
 import { isIOS } from "tns-core-modules/platform";
 
@@ -13,5 +14,11 @@ application.on(application.resumeEvent, () => {
         console.log("AppSync syncStatus: " + syncStatus);
     });
 });
+
+firebase.init({})
+    .then(
+        () => { console.log("firebase.init done"); },
+        (error) => { console.log(`firebase.init error: ${error}`); }
+    );
 
 platformNativeScriptDynamic().bootstrapModule(AppModule);

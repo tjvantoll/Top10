@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "553862870643",
+    "firebase_url": "https://top10-bfc4d.firebaseio.com",
+    "project_id": "top10-bfc4d",
+    "storage_bucket": "top10-bfc4d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:553862870643:android:e40bd42b967e9f38139c06",
+        "android_client_info": {
+          "package_name": "org.nativescript.Top10"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "553862870643-9bo1ttv1pjvh71km0afpfmud73pciurj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHJB9tpclhXclq2ExA2AutGDNkAYCcsJI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "553862870643-9bo1ttv1pjvh71km0afpfmud73pciurj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "553862870643-ni7b97cakhspov4kulc0n3cg609q3vs4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.nativescript.Top10"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

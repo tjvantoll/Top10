@@ -1,19 +1,19 @@
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { NativeScriptCommonModule } from "nativescript-angular/common";
 
-import { MLRoutingModule } from "./ml-routing.module";
-import { MLComponent } from "./ml.component";
+import { TextRoutingModule } from "./text-routing.module";
+import { TextComponent } from "./text.component";
 
 @NgModule({
     imports: [
         NativeScriptCommonModule,
-        MLRoutingModule
+        TextRoutingModule
     ],
     declarations: [
-        MLComponent
+        TextComponent
     ],
     schemas: [
         NO_ERRORS_SCHEMA
     ]
 })
-export class MLModule { }
+export class TextModule { }

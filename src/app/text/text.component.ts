@@ -7,24 +7,23 @@ import * as app from "tns-core-modules/application";
 registerElement("MLKitTextRecognition", () => require("nativescript-plugin-firebase/mlkit/textrecognition").MLKitTextRecognition);
 
 @Component({
-    selector: "ML",
+    selector: "text",
     moduleId: module.id,
-    styleUrls: ["./ml.component.css"],
-    templateUrl: "./ml.component.html"
+    styleUrls: ["./text.component.css"],
+    templateUrl: "./text.component.html"
 })
-export class MLComponent implements OnInit {
-
+export class TextComponent implements OnInit {
     blocks: Array<MLKitRecognizeTextResultBlock>;
 
-    constructor() {}
+    constructor() { }
 
     ngOnInit(): void {
 
     }
 
     onTextRecognitionResult(scanResult: any): void {
-      const value: MLKitRecognizeTextResult = scanResult.value;
-      this.blocks = value.blocks;
+        const value: MLKitRecognizeTextResult = scanResult.value;
+        this.blocks = value.blocks;
     }
 
     onDrawerButtonTap(): void {

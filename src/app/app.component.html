@@ -43,14 +43,14 @@
                     <Label col="1" text="Face Tracking" class="p-r-10"></Label>
                 </GridLayout>
 
-                <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/ml')" (tap)="onNavItemTap('/ml')">
-                    <Label col="0" text="&#xf013;" class="fa"></Label>
-                    <Label col="1" text="Machine Learning" class="p-r-10"></Label>
-                </GridLayout>
-
                 <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/maps')" (tap)="onNavItemTap('/maps')">
                     <Label col="0" text="&#xf279;" class="fa"></Label>
                     <Label col="1" text="Maps & Geolocation" class="p-r-10"></Label>
+                </GridLayout>
+
+                <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/ml')" (tap)="onNavItemTap('/ml')">
+                    <Label col="0" text="&#xf02d;" class="fa"></Label>
+                    <Label col="1" text="Text Recognition" class="p-r-10"></Label>
                 </GridLayout>
             </StackLayout>
         </ScrollView>

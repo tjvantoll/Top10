@@ -8,12 +8,12 @@ import { fromUrl, ImageSource } from "tns-core-modules/image-source";
 const firebase = require("nativescript-plugin-firebase");
 
 @Component({
-    selector: "Bluetooth",
+    selector: "ImageProcessing",
     moduleId: module.id,
-    styleUrls: ["./bluetooth.component.css"],
-    templateUrl: "./bluetooth.component.html"
+    styleUrls: ["./image.component.css"],
+    templateUrl: "./image.component.html"
 })
-export class BluetoothComponent implements OnInit {
+export class ImageComponent implements OnInit {
     landmarkURL = "https://www.novinite.com/media/images/2011-11/photo_verybig_134080.jpg";
     landmarkRenderedURL = "";
     landmarkResults = "";

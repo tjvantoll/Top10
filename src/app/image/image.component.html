@@ -1,0 +1,35 @@
+<ActionBar class="action-bar">
+    <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+    <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
+        ios.position="left">
+    </ActionItem>
+    <Label class="action-bar-title" text="Image Processing"></Label>
+</ActionBar>
+
+<GridLayout class="page">
+    <ScrollView>
+        <StackLayout class="p-20">
+            <Label class="h1" text="Landmark Recognition"></Label>
+            <Label class="m-y-20" textWrap="true" text="Enter a URL of an image that contains a landmark."></Label>
+
+            <GridLayout height="40" columns="*, auto" class="form" orientation="horizontal">
+                <TextField col="0" class="input input-border" [text]="landmarkURL"></TextField>
+                <Button col="1" class="btn btn-primary btn-rounded-sm" text="Render" (tap)="detectLandmarks()"></Button>
+            </GridLayout>
+            <Image *ngIf="landmarkRenderedURL" class="m-y-20" height="200" [src]="landmarkRenderedURL"></Image>
+            <Label textWrap="true" [text]="landmarkResults"></Label>
+
+            <StackLayout class="hr hr-light m-y-20"></StackLayout>
+
+            <Label class="h1" text="Image Labeling"></Label>
+            <Label class="m-y-20" textWrap="true" text="Enter a URL of an image that you would like labeled."></Label>
+
+            <GridLayout height="40" columns="*, auto" class="form" orientation="horizontal">
+                <TextField col="0" class="input input-border" [text]="labelURL"></TextField>
+                <Button col="1" class="btn btn-primary btn-rounded-sm" text="Render" (tap)="labelImage()"></Button>
+            </GridLayout>
+            <Image *ngIf="labelRenderedURL" class="m-y-20" height="200" [src]="labelRenderedURL"></Image>
+            <Label textWrap="true" [text]="labelResults"></Label>
+        </StackLayout>
+    </ScrollView>
+</GridLayout>

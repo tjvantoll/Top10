@@ -13,6 +13,11 @@
                     <Label col="1" text="Animations" class="p-r-10"></Label>
                 </GridLayout>
 
+                <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/apis')" (tap)="onNavItemTap('/apis')">
+                    <Label col="0" text="&#xf135;" class="fa"></Label>
+                    <Label col="1" text="Native APIs" class="p-r-10"></Label>
+                </GridLayout>
+
                 <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/appsync')" (tap)="onNavItemTap('/appsync')">
                     <Label col="0" text="&#xf021;" class="fa"></Label>
                     <Label col="1" text="AppSync" class="p-r-10"></Label>

@@ -1,4 +1,4 @@
-<ActionBar class="action-bar">
+<ActionBar class="action-bar" flat="true">
     <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
     <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
         ios.position="left">
@@ -7,7 +7,8 @@
 </ActionBar>
 
 <GridLayout class="page">
-    <StackLayout class="p-20">
-        <Button class="btn btn-primary btn-rounded-sm" text="Toggle Flashlight 🔦" (tap)="toggleFlashlight()"></Button>
+    <StackLayout class="">
+        <Button class="btn btn-primary btn-rounded-lg" text="Toggle Flashlight 🔦" (tap)="toggleFlashlight()"></Button>
+        <Button class="btn btn-primary btn-rounded-lg" text="Play a sound 🐵" (tap)="playSound()"></Button>
     </StackLayout>
 </GridLayout>

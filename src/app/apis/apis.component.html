@@ -7,8 +7,8 @@
 </ActionBar>
 
 <GridLayout class="page">
-    <StackLayout class="">
+    <StackLayout class="m-t-10">
         <Button class="btn btn-primary btn-rounded-lg" text="Toggle Flashlight 🔦" (tap)="toggleFlashlight()"></Button>
-        <Button class="btn btn-primary btn-rounded-lg" text="Play a sound 🐵" (tap)="playSound()"></Button>
+        <Button *ngIf="isIOS" class="btn btn-primary btn-rounded-lg" text="Play a sound 🐵" (tap)="playSound()"></Button>
     </StackLayout>
 </GridLayout>

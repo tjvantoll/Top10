@@ -2,7 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 import * as app from "tns-core-modules/application";
 import { alert } from "tns-core-modules/ui/dialogs";
-import { File, knownFolders } from "tns-core-modules/file-system";
+import { knownFolders } from "tns-core-modules/file-system";
+import { isIOS } from "tns-core-modules/platform";
 
 @Component({
     selector: "APIs",
@@ -11,11 +12,20 @@ import { File, knownFolders } from "tns-core-modules/file-system";
     templateUrl: "./apis.component.html"
 })
 export class APIsComponent implements OnInit {
+    isiOS = isIOS;
     constructor() { }
 
     ngOnInit(): void { }
 
     toggleFlashlight() {
+        if (isIOS) {
+            this.toggleFlashlightIOS();
+        } else {
+            this.toggleFlashlightAndroid();
+        }
+    }
+
+    toggleFlashlightIOS() {
         var device = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo);
         if (!device) {
             alert({
@@ -37,36 +47,40 @@ export class APIsComponent implements OnInit {
         device.unlockForConfiguration();
     }
 
-    /*
-NSString *soundFilePath = [NSString stringWithFormat:@"%@/test.m4a",[[NSBundle mainBundle] resourcePath]];
-NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
+    toggleFlashlightAndroid() {
+        var packageManager = app.getNativeApplication().getInstance().getPackageManager();
+        var flashAvailable = packageManager.hasSystemFeature(android.content.pm.PackageManager.FEATURE_CAMERA_FLASH);
 
-AVAudioPlayer *player = [[AVAudioPlayer alloc] initWithContentsOfURL:soundFileURL error:nil];
-player.numberOfLoops = -1; //Infinite
+        if (!flashAvailable) {
+            alert({
+                title: "Native APIs",
+                message: "This device does not have a flashlight.",
+                okButtonText: "OK"
+            });
+            return;
+        }
 
-[player play];
-*/
+        var camera = android.hardware.Camera.open(0);
+        var parameters = camera.getParameters();
 
+        if (parameters.getFlashMode() == android.hardware.Camera.Parameters.FLASH_MODE_TORCH) {
+            parameters.setFlashMode(android.hardware.Camera.Parameters.FLASH_MODE_OFF);
+            camera.setParameters(parameters);
+            camera.stopPreview();
+        } else {
+            parameters.setFlashMode(android.hardware.Camera.Parameters.FLASH_MODE_TORCH);
+            camera.setParameters(parameters);
+            camera.startPreview();
+        }
+    }
 
     playSound() {
-        console.log("---");
-        console.log("---");console.log("---");
-        console.log("---");
-        console.log("---");
-        console.log("---");
-        console.log("---");
-        console.log("---");
-
-
         var url = NSURL.fileURLWithPath(knownFolders.currentApp().path + "/app/sounds/Monkey.mp3");
         var player = AVAudioPlayer.alloc().initWithContentsOfURLError(url);
 
-        player.numberOfLoops = 3;
+        player.numberOfLoops = 10;
         player.prepareToPlay();
-
-        setTimeout(() => {
-            player.play();
-        }, 2000);
+        player.play();
     }
 
     onDrawerButtonTap(): void {

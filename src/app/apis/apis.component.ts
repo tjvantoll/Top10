@@ -12,7 +12,7 @@ import { isIOS } from "tns-core-modules/platform";
     templateUrl: "./apis.component.html"
 })
 export class APIsComponent implements OnInit {
-    isiOS = isIOS;
+    isIOS = isIOS;
     constructor() { }
 
     ngOnInit(): void { }

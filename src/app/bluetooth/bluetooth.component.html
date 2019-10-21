@@ -3,9 +3,12 @@
     <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
         ios.position="left">
     </ActionItem>
-    <Label class="action-bar-title" text="Bluetooth"></Label>
+    <Label class="action-bar-title" text="Bluetooth!!!"></Label>
 </ActionBar>
 
 <GridLayout class="page">
-    <Label text="Bluetooth"></Label>
+    <StackLayout>
+        <Button text="Connect" class="btn btn-primary" (tap)="connect()"></Button>
+        <Button text="Move 🤖" class="btn btn-primary" (tap)="move()"></Button>
+    </StackLayout>
 </GridLayout>

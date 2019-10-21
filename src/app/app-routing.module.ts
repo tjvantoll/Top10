@@ -3,7 +3,7 @@ import { Routes } from "@angular/router";
 import { NativeScriptRouterModule } from "nativescript-angular/router";
 
 const routes: Routes = [
-    { path: "", redirectTo: "/animations", pathMatch: "full" },
+    { path: "", redirectTo: "/bluetooth", pathMatch: "full" },
     { path: "animations", loadChildren: () => import("./animations/animations.module").then(mod => mod.AnimationsModule) },
     { path: "apis", loadChildren: () => import("./apis/apis.module").then(mod => mod.APIsModule) },
     { path: "ar", loadChildren: () => import("./ar/ar.module").then(mod => mod.ARModule) },

@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 import * as app from "tns-core-modules/application";
+import { alert } from "tns-core-modules/ui/dialogs";
 var bluetooth = require("nativescript-bluetooth");
 
 @Component({
@@ -22,9 +23,28 @@ export class BluetoothComponent implements OnInit {
     }
 
     connect() {
+        bluetooth.startScanning({
+            onDiscovered: (peripheral) => {
+                console.log(peripheral.UUID)
+                if (peripheral.UUID == "E609101F-AEF0-CFF9-1D8B-A80DA23433A8") {
+                    setTimeout(() => {
+                        this.connectToRobot();
+                    }, 3000);
+                }
+            }
+        })
+
+    }
+
+    connectToRobot() {
         bluetooth.connect({
             UUID: "E609101F-AEF0-CFF9-1D8B-A80DA23433A8",
             onConnected: (peripheral) => {
+                alert({
+                    message: "Connected 🤖",
+                    okButtonText: "Ok",
+                    title: "Top 10"
+                });
                 console.log("Periperhal connected with UUID!!: " + peripheral.UUID);
             },
             onDisconnected: (peripheral) => {

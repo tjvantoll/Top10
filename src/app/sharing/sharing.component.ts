@@ -24,11 +24,11 @@ export class SharingComponent implements OnInit {
     }
 
     chance(Chance) {
-        this.chanceResult = new Chance().name();
+        // this.chanceResult = new Chance().name();
         // this.chanceResult = new Chance().paragraph();
         // this.chanceResult = new Chance().word();
         // this.chanceResult = new Chance().email();
-        // this.chanceResult = new Chance().address();
+        this.chanceResult = new Chance().address();
         // this.chanceResult = new Chance().date();
     }
 
@@ -47,7 +47,7 @@ export class SharingComponent implements OnInit {
     }
 
     moment(moment) {
-        this.momentResult = moment().format("LLLL");
+        this.momentResult = moment().format("LLL");
     }
 
     onDrawerButtonTap(): void {

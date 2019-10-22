@@ -78,7 +78,6 @@ export class APIsComponent implements OnInit {
         var url = NSURL.fileURLWithPath(knownFolders.currentApp().path + "/app/sounds/Monkey.mp3");
         var player = AVAudioPlayer.alloc().initWithContentsOfURLError(url);
 
-        player.numberOfLoops = 10;
         player.prepareToPlay();
         player.play();
     }

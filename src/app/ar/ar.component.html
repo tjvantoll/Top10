@@ -10,7 +10,10 @@
     <Label text="AR"></Label>
     <AR
         debugLevel="FEATURE_POINTS"
-        detectPlanes="true"
+        planeDetection="HORIZONTAL"
+        trackingMode="WORLD"
+        showStatistics="true"
+        planeOpacity="0.2"
         [planeMaterial]="planeMaterial"
         (planeTapped)="onPlaneTapped($event)">
     </AR>

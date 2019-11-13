@@ -14,13 +14,7 @@ registerElement("AR", () => require("nativescript-ar").AR);
     templateUrl: "./ar.component.html"
 })
 export class ARComponent implements OnInit {
-    // All these are valid plane materials:
-    // public planeMaterial = "Assets.scnassets/Materials/tron/tron-diffuse.png";
-    // public planeMaterial = new Color("red");
-    public planeMaterial = <ARMaterial>{
-        diffuse: new Color("red"),
-        transparency: 0.2
-    };
+    public planeMaterial = new Color("red");
 
     constructor() {
         console.log("AR supported? " + AR.isSupported());
@@ -32,7 +26,6 @@ export class ARComponent implements OnInit {
     onPlaneTapped(args: ARPlaneTappedEventData): void {
         console.log(`Plane tapped at ${args.position.x} y ${args.position.y} z ${args.position.z}`);
         const ar: AR = args.object;
-        // interact with the 'ar' object here if you like
         ar.addBox({
             position: {
                 x: args.position.x,
